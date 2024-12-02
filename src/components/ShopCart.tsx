@@ -20,10 +20,7 @@ export const ShopCart = ({ itemCount, closeCart }: cartCost) => {
         <div className="flex flex-col rounded-sm bg-white">
           <div className="flex justify-between">
             <p>Cart</p>
-            <p
-              onClick={() => closeCart()}
-              className="p-2 cursor-pointer font-bold"
-            >
+            <p onClick={() => closeCart()} className="cursor-pointer font-bold">
               X
             </p>
           </div>
