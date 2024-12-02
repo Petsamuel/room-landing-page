@@ -3,24 +3,28 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Hero } from "./components/Hero";
-
-function App() {
+import React, { useState } from "react";
+const App: React.FC = () => {
+  const [shop, setShop] = useState<boolean>(false);
+  console.log(shop);
   return (
     <>
       <main>
         <section className="relative" id="home">
-          <Header />
-          <Hero />
+          <Header shop={(val) => setShop(val)} />
+          <Hero shopToggle={shop} setToggleShop={(val) => setShop(val)} />
         </section>
+
         <section id="about">
           <About />
         </section>
+
         <section id="contact">
           <Footer />
         </section>
       </main>
     </>
   );
-}
+};
 
 export default App;

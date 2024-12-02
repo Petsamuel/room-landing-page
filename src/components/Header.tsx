@@ -3,17 +3,32 @@ import IconOpen from "../assets/images/icon-hamburger.svg";
 import IconClose from "../assets/images/icon-close.svg";
 import { useState } from "react";
 import { Navlist } from "./data";
-const Header = () => {
+
+interface ShopTrigger {
+  shop: (arg: boolean) => void;
+}
+interface ShopVal {
+  val: string;
+}
+const Header = ({ shop }: ShopTrigger) => {
   const [status, setStatus] = useState(true);
 
+  const ShopFunc = ({ val }: ShopVal) => {
+    if (val === "shop") {
+      shop(true);
+    } else {
+      shop(false);
+    }
+  };
   return (
     <>
       <header
         className={` ${
-          !status ? " lg:bg-transparent bg-white z-30 fixed" : "absolute"
-        }  top-0 w-full`}
+          !status ? " lg:bg-transparent bg-white fixed" : "absolute"
+        }  top-0 w-full z-50`}
       >
         <div className="flex gap-[4rem] lg:m-8  my-4 items-center p-4 justify-evenly lg:justify-start">
+          {/* menu controls */}
           <div className="lg:hidden">
             <img
               className="cursor-pointer"
@@ -35,7 +50,13 @@ const Header = () => {
               <ul key={index}>
                 <li className="text-white font-semibold hover:underline underline-offset-8 ">
                   {" "}
-                  <a href={val.link} className="">
+                  <a
+                    href={val.link}
+                    className=""
+                    onClick={() => {
+                      ShopFunc({ val: val.name });
+                    }}
+                  >
                     {" "}
                     {val.name}
                   </a>
@@ -50,7 +71,15 @@ const Header = () => {
                 <ul key={index}>
                   <li className={`${!status && "text-black font-semibold"}`}>
                     {" "}
-                    <a href={val.link}> {val.name}</a>
+                    <a
+                      href={val.link}
+                      onClick={() => {
+                        ShopFunc({ val: val.name });
+                      }}
+                    >
+                      {" "}
+                      {val.name}
+                    </a>
                   </li>
                 </ul>
               ))}

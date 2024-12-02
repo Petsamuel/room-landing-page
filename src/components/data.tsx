@@ -92,3 +92,17 @@ export const AboutContent = [
     image2: AboutImage2,
   },
 ];
+export const ShopContent = [
+  {
+    title: <p className="lg:text-right font-bold">room Shop</p>,
+    heading: <p className="lg:text-right">Multifunctional collection</p>,
+    price: <p className="lg:text-right">$120.00</p>,
+    discount: <p className="text-xs line-through text-gray-600">$250.00</p>,
+    content: (
+      <p className="lg:text-right">
+        Find the furniture pieces you need, from traditional to contemporary
+        styles or anything in between.
+      </p>
+    ),
+  },
+];
