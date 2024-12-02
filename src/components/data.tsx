@@ -26,7 +26,7 @@ import Mhero3 from "../assets/images/mobile-image-hero-3.jpg";
 export const HeroContent = [
   {
     name: "slide 1",
-    heading: <p> Discover innovative ways to decorate</p>,
+    heading: <h1> Discover innovative ways to decorate</h1>,
     content: (
       <p>
         We provide unmatched quality, comfort, and style for property owners
@@ -41,7 +41,7 @@ export const HeroContent = [
   },
   {
     name: "slide 2",
-    heading: <p> We are available all across the globe</p>,
+    heading: <h1> We are available all across the globe</h1>,
     content: (
       <p>
         {" "}
@@ -57,7 +57,7 @@ export const HeroContent = [
   },
   {
     name: "slide 3",
-    heading: <p> Manufactured with the best materials</p>,
+    heading: <h1> Manufactured with the best materials</h1>,
     content: (
       <p>
         {" "}
@@ -77,7 +77,7 @@ import AboutImage1 from "../assets/images/image-about-light.jpg";
 import AboutImage2 from "../assets/images/image-about-dark.jpg";
 export const AboutContent = [
   {
-    heading: <p> About our funiture</p>,
+    heading: <h1> About our funiture</h1>,
     content: (
       <p>
         Our multifunctional collection blends design and function to suit your
@@ -95,7 +95,7 @@ export const AboutContent = [
 export const ShopContent = [
   {
     title: <p className="lg:text-right font-bold">room Shop</p>,
-    heading: <p className="lg:text-right">Multifunctional collection</p>,
+    heading: <h1 className="lg:text-right">Multifunctional collection</h1>,
     price: <p className="lg:text-right">$120.00</p>,
     discount: <p className="text-xs line-through text-gray-600">$250.00</p>,
     content: (
