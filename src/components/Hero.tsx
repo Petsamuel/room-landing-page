@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import arrow from "../assets/images/icon-arrow.svg";
 import prev from "../assets/images/icon-angle-left.svg";
 import next from "../assets/images/icon-angle-right.svg";
+import placeholder from "../assets/images/desktop-image-hero-1.jpg";
 import { HeroContent, ShopContent } from "./data";
 import { ShopCart } from "./ShopCart";
 
@@ -54,11 +55,14 @@ export const Hero = ({ shopToggle, setToggleShop }: shopToggle) => {
       } flex gap-4 lg:flex-row flex-col relative`}
     >
       <div className="hidden lg:block">
-        <img
-          src={load?.image}
-          alt="image"
-          className={`${shop && "h-screen"}`}
-        />
+        <Suspense fallback={<div>Component1 are loading please wait...</div>}>
+          <img
+            src={load?.image ? load?.image : placeholder}
+            alt="image"
+            className={`${shop && "h-screen"}
+          `}
+          />
+        </Suspense>
       </div>
       <div className="lg:hidden block">
         <img src={load?.image2} alt="image" className="" />
