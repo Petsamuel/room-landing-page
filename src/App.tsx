@@ -6,7 +6,7 @@ import { Hero } from "./components/Hero";
 import React, { useState } from "react";
 const App: React.FC = () => {
   const [shop, setShop] = useState<boolean>(false);
-  console.log(shop);
+
   return (
     <>
       <main>
@@ -15,9 +15,11 @@ const App: React.FC = () => {
           <Hero shopToggle={shop} setToggleShop={(val) => setShop(val)} />
         </section>
 
-        <section id="about">
-          <About />
-        </section>
+        {!shop && (
+          <section id="about">
+            <About />
+          </section>
+        )}
 
         <section id="contact">
           <Footer />
