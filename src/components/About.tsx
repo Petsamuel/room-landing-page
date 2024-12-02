@@ -18,6 +18,7 @@ const About = () => {
           <img
             src={AboutContent[0].image2}
             className=" mb-auto w-full lg:w-fit"
+            alt="image"
           />
 
           {/* content */}
@@ -31,7 +32,7 @@ const About = () => {
 
           <img
             src={AboutContent[0].image1}
-            alt=""
+            alt="image"
             className="mb-auto w-full lg:w-fit"
           />
         </div>
