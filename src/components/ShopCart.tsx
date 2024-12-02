@@ -14,7 +14,6 @@ export const ShopCart = ({ itemCount, closeCart }: cartCost) => {
     setResult(itemCount * price);
   }, [itemCount]);
 
-
   return (
     <>
       <section className="bg-white p-8 fixed left-0 shadow-md z-50 top-0] h-full">
@@ -41,7 +40,10 @@ export const ShopCart = ({ itemCount, closeCart }: cartCost) => {
               <p className="text-right">${result}</p>
             </div>
           </div>
-          <div className="my-4 bg-black flex items-center text-white p-4  justify-center cursor-pointer">
+          <div
+            className="my-4 bg-black flex items-center text-white p-4  justify-center cursor-pointer"
+            onClick={() => prompt("join waitlist", "user@gmail.com")}
+          >
             Checkout
           </div>
         </div>
